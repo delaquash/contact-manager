@@ -1,6 +1,6 @@
 import React from 'react';
 import Contacts from './components/contacts/Contacts';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/Layout/Header';
 import AddContact from './components/contacts/AddContact';
 import EditContact from './components/contacts/EditContact';
