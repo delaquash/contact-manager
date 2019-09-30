@@ -55,6 +55,21 @@ async componentDidMount(){
     return;
     }
 
+    const updateContact = {
+        name,
+        email,
+        phone
+
+    }
+
+    const { id } = this.props.match.params;
+
+    const res = await axios.put (
+        `https://jsonplaceholder.typicode.com/user/${id}`, updateContact
+    );
+        dispatch({ type: 'UPDATE_CONTACT', payload: res.data });
+
+
     //   Clearing the State
      this.setState({
          name:'',
