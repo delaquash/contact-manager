@@ -37,6 +37,11 @@ import './css/Navbar.css';
                         Rooms
                     </Link>
                 </li>
+                <li>
+                    <Link to="/about">
+                        About Us
+                    </Link>
+                </li>
                </ul>
               </div>
             </nav>
