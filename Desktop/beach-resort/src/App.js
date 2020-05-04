@@ -6,6 +6,7 @@ import About from './components/pages/About';
 import Error from './components/pages/Error';
 import { Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
+// import data from './data';
 import './App.css';
 
 function App() {
