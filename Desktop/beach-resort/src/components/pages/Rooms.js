@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../Hero';
 import Banner from '../pages/Banner';
-import '../css/Room.css';
+import '../css/Rooms.css';
 import {Link} from 'react-router-dom';
 
  const Rooms =()=> {
