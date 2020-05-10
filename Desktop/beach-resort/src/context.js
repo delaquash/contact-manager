@@ -41,8 +41,7 @@ const RoomContext = React.createContext();
 // This is for the the link for features of the room that appears in the features section link
     getRoom = slug => {
         let tempRooms = [ ...this.state.rooms ];
-        const room = tempRooms.find(room =>
-            room.slug === slug);
+        const room = tempRooms.find(room => room.slug === slug);
             return room;
     }
     render() {
