@@ -36,11 +36,18 @@ const RoomContext = React.createContext();
         let room = { ...item.fields,images, id };
         return room;
      });
-     return tempItems
+     return tempItems;
+    }
+// This is for the the link for features of the room that appears in the features section link
+    getRoom = slug => {
+        let tempRooms = [ ...this.state.rooms ];
+        const room = tempRooms.find(room =>
+            room.slug === slug);
+            return room;
     }
     render() {
         return (
-            <RoomContext.Provider value={{...this.state}}>
+            <RoomContext.Provider value={{...this.state, getRoom: this.getRoom }}>
                 {this.props.children}
             </RoomContext.Provider>
         );
