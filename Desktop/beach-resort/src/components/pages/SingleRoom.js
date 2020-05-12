@@ -4,6 +4,7 @@ import Hero from '../Hero';
 import Banner from '../pages/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from './../../context';
+import '../css/SingleRoom.css';
 
  class SingleRoom extends Component {
      constructor(props) {
