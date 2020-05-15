@@ -5,6 +5,8 @@ import Services from '../Services';
 import '../css/Home.css';
 import {Link} from 'react-router-dom';
 import FeaturedRooms from "../FeaturedRoom";
+import StyledHero from '../StyledHero';
+import Button from '../StyledHero';
 
 const Home = () => {
     return (
@@ -19,6 +21,11 @@ const Home = () => {
              </Hero>
              <Services />
              <FeaturedRooms />
+                {/* <StyledHero>
+
+                </StyledHero> */}
+
+
         </React.Fragment>
     )
 }

@@ -4,6 +4,7 @@ import Hero from '../Hero';
 import Banner from '../pages/Banner';
 import { Link } from 'react-router-dom';
 import { RoomContext } from './../../context';
+import StyledHero from '../StyledHero';
 import '../css/SingleRoom.css';
 
  class SingleRoom extends Component {
@@ -44,14 +45,31 @@ import '../css/SingleRoom.css';
                 pets,
                 images
             } = room;
+            const [mainImg, ...defaultImg] = images;
         return (
-            <Hero hero="roomsHero">
-                <Banner title={`${name} room`}>
-                    <Link to="/rooms" className="btn-primary">
-                        Back to rooms
-                    </Link>
-                </Banner>
-            </Hero>
+                    <>
+                    <StyledHero img={images[0] || this.state.defaultImg}>
+                        <Banner title={`${name} room`}>
+                            <Link to="/rooms" className="btn-primary">
+                                Back to rooms
+                            </Link>
+                        </Banner>
+                    </StyledHero>
+                       <section className="single-room">
+                            <div className="single-room-images">
+                                {defaultImg.map((item, index) => {
+                                    return <img key={index}
+                                    src={item} alt={name} />
+                                })}
+                            </div>
+                            <div className="single-room-info">
+                                <article className="desc">
+                                <h3>Details</h3>
+                                    <p3>{description}</p3>
+                                </article>
+                            </div>
+                        </section>
+                        </>
         )
     }
 }
