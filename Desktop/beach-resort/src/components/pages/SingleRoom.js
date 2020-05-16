@@ -67,9 +67,27 @@ import '../css/SingleRoom.css';
                                 <h3>Details</h3>
                                     <p3>{description}</p3>
                                 </article>
+                                <article className="info">
+                                <h3>Info</h3>
+                                <h6>price: ${price}</h6>
+                                <h6>Size: ${size} Squarefoot </h6>
+                                <h6>max capacity : {''}
+                                 {capacity > 1 ? `${capacity} people` : `${capacity} person` }
+                                </h6>
+                               <h6>{pets ? 'pets allowed' : 'no pets allowed'}</h6>
+                               <h6>{breakfast && 'Free Breakfast Included'}</h6>
+                                </article>
                             </div>
                         </section>
-                        </>
+                        <section className="room-extras">
+                                <h6>Extras</h6>
+                                <ul className="extras">
+                                    {extras.map((item, index) => {
+                                        return <li key={index}>-{item}</li>
+                                    })}
+                                </ul>
+                        </section>
+</>
         )
     }
 }
