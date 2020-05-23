@@ -65,7 +65,7 @@ import '../css/SingleRoom.css';
                             <div className="single-room-info">
                                 <article className="desc">
                                 <h3>Details</h3>
-                                    <p3>{description}</p3>
+                                    <p>{description}</p>
                                 </article>
                                 <article className="info">
                                 <h3>Info</h3>

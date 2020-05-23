@@ -62,7 +62,6 @@ const RoomContext = React.createContext();
         const type = e.target.type;
         const name = e.target.name;
         const value = e.target.value;
-        console.log(type, name, value);
     };
     filterRooms = () => {
         console.log("hello");
