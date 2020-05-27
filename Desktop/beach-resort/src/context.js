@@ -23,7 +23,7 @@ const RoomContext = React.createContext();
     //  Getting data
     componentDidMount() {
         let rooms = this.formatData(items);
-        console.log(rooms);
+        // console.log(rooms);
         let featuredRooms = rooms.filter(room => room.featured === true);
         let maxPrice = Math.max(...rooms.map(item => item.price));
         let maxSize = Math.max(...rooms.map(item =>item.size))
@@ -51,7 +51,7 @@ const RoomContext = React.createContext();
      });
      return tempItems;
     }
-// This is for the the link for features of the room that appears in the features section link
+// This is the link for features of the room that appears in the features section link
     getRoom = slug => {
         let tempRooms = [ ...this.state.rooms ];
         const room = tempRooms.find(room => room.slug === slug);
@@ -59,12 +59,39 @@ const RoomContext = React.createContext();
     }
 
     handleChange= e => {
-        const type = e.target.type;
-        const name = e.target.name;
-        const value = e.target.value;
+        const target = e.target;
+        const name = e.target.type;
+        const value = e.type === "checkbox" ? target.checked : target.value;
+        this.setState({
+            [name]: value
+        },
+        this.filterRooms
+        );
     };
+    // Filtering out various spect of the rooms
     filterRooms = () => {
-        console.log("hello");
+      let { rooms, type, capacity, price, minPrice, minSize, maxSize, breakfast, pets } = this.state;
+    //   All the rooms
+      let tempRooms = [...rooms];
+
+    //   Filtering by the types of rooms
+      if(type !== "all"){
+          tempRooms=  tempRooms.filter(room => room.type === type );
+      }
+
+    //   Filtering by capacity
+    if(capacity !== 1 ){
+        tempRooms = tempRooms.filter (room => room.capacity >= capacity);
+    }
+
+    // Filtering by price ranges
+        tempRooms = tempRooms.filter(room => room.price <= price)
+
+    //Filtering by the size of the room
+    tempRooms = tempRooms.filter( room => room.size >= minSize && room.size <= maxSize);
+      this.setState({
+          sortedRooms: tempRooms
+      });
     }
     render() {
         return (

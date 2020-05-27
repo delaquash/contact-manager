@@ -5,7 +5,7 @@ import { withRoomConsumer } from '../context';
 import Loading from '../components/Loading';
 
 const RoomContainer = ({ context }) => {
-    const { loading, sortedRooms, rooms} = context;
+    const { loading, sortedRooms, rooms } = context;
 
         // <RoomConsumer>
         // {value => {
@@ -16,7 +16,8 @@ const RoomContainer = ({ context }) => {
                 return (
                   <div>
                 <RoomFilter rooms={rooms} />
-                {/* <RoomList rooms={sortedRooms} /> */}
+                <RoomList rooms={sortedRooms} />
+
             </div>
                 )
         // }}
