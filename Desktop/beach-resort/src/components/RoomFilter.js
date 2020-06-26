@@ -82,24 +82,24 @@ const RoomFilter = ({ rooms }) =>{
                         {/* Selecting room base on size */}
                             <div className="form-group">
                                 <label htmlFor="size">Room Size</label>
-                                <div className="size-inputs">
-                                    <input
-                                    type="number"
-                                    name="minSize"
-                                    id="size"
-                                    value={minSize}
-                                    onChange={handleChange}
-                                    className="size-input"
-                                    />
-                                    <input
-                                    type="number"
-                                    name="maxSize"
-                                    id="size"
-                                    value={maxSize}
-                                    onChange={handleChange}
-                                    className="size-input"
-                                    />
-                                </div>
+                                    <div className="size-inputs">
+                                        <input
+                                        type="number"
+                                        name="minSize"
+                                        id="size"
+                                        value={minSize}
+                                        onChange={handleChange}
+                                        className="size-input"
+                                        />
+                                        <input
+                                        type="number"
+                                        name="maxSize"
+                                        id="size"
+                                        value={maxSize}
+                                        onChange={handleChange}
+                                        className="size-input"
+                                        />
+                                    </div>
                             </div>
                         {/* End of room selection according to size */}
                 </form>
